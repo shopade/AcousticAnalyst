@@ -245,7 +245,7 @@ private fun RoomParametersCard(
                 OutlinedTextField(
                     value = t0Input,
                     onValueChange = onT0Change,
-                    label = { Text("Ref T0 (s)") },
+                    label = { Text("Ref T60,0 (s)") },
                     placeholder = { Text("0.5") },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     singleLine = true,
@@ -293,7 +293,7 @@ private fun MeasurementTableHeader() {
             textAlign = TextAlign.Center
         )
         Text(
-            text = "T (s)",
+            text = "T60 (s)",
             style = MaterialTheme.typography.labelMedium,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onPrimaryContainer,

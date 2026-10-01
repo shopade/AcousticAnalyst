@@ -13,7 +13,7 @@ Create an Android app named Acoustic Analyst that allows users to input sound pr
 - **ISO 717-1 Reference Contour Curve Fitting**: Fit standard reference curves to derive weighted single-number ratings ($R_w$, $D_{\text{nT,w}}$, $D_w$) for sound insulation evaluation.
 
 ## High-Level Technical Stack
-- **Language**: Kotlincongi
+- **Language**: Kotlin
 - **UI Framework**: Jetpack Compose with Material 3 Design
 - **Navigation & Adaptive Strategy**: Jetpack Navigation 3 (state-driven) and Compose Material Adaptive library (`androidx.compose.material3.adaptive`)
 - **Architecture & Asynchronous Processing**: Android Architecture Components (ViewModel, StateFlow) and Kotlin Coroutines
