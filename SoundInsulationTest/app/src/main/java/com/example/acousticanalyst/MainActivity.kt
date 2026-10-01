@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
             AcousticAnalystTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     val acousticViewModel: AcousticViewModel = viewModel()
                     MainScreen(viewModel = acousticViewModel)
