@@ -91,12 +91,12 @@ object Iso717Calculator {
         }
 
         val sumC = frequencies.sumOf { freq ->
-            10.0.pow((measuredValues.getValue(freq) - weightsC.getValue(freq)) / 10.0)
+            10.0.pow(-(measuredValues.getValue(freq) + weightsC.getValue(freq)) / 10.0)
         }
         val cTerm = (-10.0 * log10(sumC) - ratingAt500Hz).roundToInt()
 
         val sumCtr = frequencies.sumOf { freq ->
-            10.0.pow((measuredValues.getValue(freq) - weightsCtr.getValue(freq)) / 10.0)
+            10.0.pow(-(measuredValues.getValue(freq) + weightsCtr.getValue(freq)) / 10.0)
         }
         val ctrTerm = (-10.0 * log10(sumCtr) - ratingAt500Hz).roundToInt()
 

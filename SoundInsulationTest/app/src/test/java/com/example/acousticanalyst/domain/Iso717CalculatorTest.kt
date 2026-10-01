@@ -46,9 +46,9 @@ class Iso717CalculatorTest {
         assertNotNull(result)
         assertEquals(51, result!!.ratingValue)
         assertEquals(10.0, result.sumUnfavorableDeviations, delta)
-        // Verify C and Ctr terms are calculated and non-zero
-        assertEquals(-116, result.cTerm)
-        assertEquals(-123, result.ctrTerm)
+        // Verify C and Ctr terms are calculated and correct according to ISO 717-1
+        assertEquals(-16, result.cTerm)
+        assertEquals(-23, result.ctrTerm)
     }
 
     @Test
