@@ -14,10 +14,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.acousticanalyst.ui.screens.MainScreen
 import com.example.acousticanalyst.ui.theme.AcousticAnalystTheme
 import com.example.acousticanalyst.ui.viewmodel.AcousticViewModel
+import com.example.acousticanalyst.util.SecurityUtils
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SecurityUtils.verifyAppSignature(this)
         enableEdgeToEdge()
         setContent {
             AcousticAnalystTheme {

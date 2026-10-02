@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import java.security.MessageDigest
 
+@Suppress("unused")
 object SecurityUtils {
 
     /**
@@ -17,21 +18,11 @@ object SecurityUtils {
     fun verifyAppSignature(context: Context, expectedHash: String? = null): Boolean {
         try {
             val packageName = context.packageName
-            val signatures = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                val packageInfo = context.packageManager.getPackageInfo(
-                    packageName,
-                    PackageManager.GET_SIGNING_CERTIFICATES
-                )
-                packageInfo.signingInfo?.apkContentsSigners
-            } else {
-                @Suppress("DEPRECATION")
-                val packageInfo = context.packageManager.getPackageInfo(
-                    packageName,
-                    PackageManager.GET_SIGNATURES
-                )
-                @Suppress("DEPRECATION")
-                packageInfo.signatures
-            }
+            val packageInfo = context.packageManager.getPackageInfo(
+                packageName,
+                PackageManager.GET_SIGNING_CERTIFICATES
+            )
+            val signatures = packageInfo.signingInfo?.apkContentsSigners
 
             if (signatures.isNullOrEmpty()) return false
 
