@@ -39,9 +39,9 @@ fun AcousticChartCanvas(
     shiftedReferenceCurve: Map<Int, Double>,
     ratingType: String,
     ratingValue: Int?,
+    modifier: Modifier = Modifier,
     cTerm: Int? = null,
-    ctrTerm: Int? = null,
-    modifier: Modifier = Modifier
+    ctrTerm: Int? = null
 ) {
     val frequencies = (measuredCurve.keys + shiftedReferenceCurve.keys).distinct().sorted()
 
